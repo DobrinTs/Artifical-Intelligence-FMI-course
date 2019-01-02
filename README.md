@@ -1,0 +1,1 @@
+This repository contains my homeworks from the course Artifical Intelligence at the Faculty of Mathematics and informatics.
