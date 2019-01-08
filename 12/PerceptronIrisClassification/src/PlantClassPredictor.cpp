@@ -43,55 +43,31 @@ void PlantClassPredictor::restartPerceptrons() {
     }
 }
 
-double PlantClassPredictor::crossValidate(const std::vector<Plant>& dataset, int numberOfFolds)
+double PlantClassPredictor::crossValidate(const std::vector<Plant>& dataset, const int numberOfFolds)
 {
-    srand(time(NULL));
-
-    std::vector<Plant> folds[numberOfFolds];
-    for(Plant p : dataset)
-    {
-        int foldIdx = rand() % numberOfFolds;
-        folds[foldIdx].push_back(p);
-    }
+    Folds folds(dataset, numberOfFolds);
 
     double meanAccuracy = 0;
     for(int i=0; i<numberOfFolds; i++) {
+        std::vector<Plant> trainingDataset = folds.getCombinedFoldsExceptIdx(i);
+        std::vector<Plant> testDataset = folds.getFold(i);
+
         restartPerceptrons();
-        std::vector<Plant> trainingDataset = combineFoldsExceptIdx(folds, i, numberOfFolds);
         train(trainingDataset);
 
         int correctCount = 0;
-        for(int j=0; j<folds[i].size(); j++)
+        for(int j=0; j<testDataset.size(); j++)
         {
-            std::string prediction = predictClass(folds[i][j]);
-            if(prediction == folds[i][j].plantClass)
+            std::string prediction = predictClass(testDataset[j]);
+            if(prediction == testDataset[j].plantClass)
             {
                 correctCount++;
             }
         }
-        double accuracy = (double)correctCount/folds[i].size();
+        double accuracy = (double)correctCount/testDataset.size();
         meanAccuracy += accuracy;
     }
     meanAccuracy /= numberOfFolds;
     return meanAccuracy;
-}
 
-std::vector<Plant> PlantClassPredictor::combineFoldsExceptIdx(std::vector<Plant> folds[],
-    int skipFoldIdx, int totalNumberOfFolds)
-{
-    std::vector<Plant> combined;
-
-    for(int i=0; i<totalNumberOfFolds; i++)
-    {
-        if(i == skipFoldIdx)
-        {
-            continue;
-        }
-
-        for(int j=0; j<folds[i].size(); j++)
-        {
-            combined.push_back(folds[i][j]);
-        }
-    }
-    return combined;
 }

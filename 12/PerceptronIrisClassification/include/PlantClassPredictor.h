@@ -7,6 +7,7 @@
 
 #include "Perceptron.h"
 #include "Plant.h"
+#include "Folds.h"
 
 class PlantClassPredictor
 {
@@ -24,9 +25,6 @@ class PlantClassPredictor
         std::string classNames[3] = {"Iris-setosa", "Iris-versicolor", "Iris-virginica"};
 
         void restartPerceptrons();
-        std::vector<Plant> combineFoldsExceptIdx(std::vector<Plant> folds[],
-            int skipFoldIdx, int totalNumberOfFolds);
-
 };
 
 #endif // PLANTCLASSPREDICTOR_H

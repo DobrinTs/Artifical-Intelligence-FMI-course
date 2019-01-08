@@ -1,18 +1,18 @@
 # depslib dependency file v1.0
-1546938934 source:/home/dobri/Documents/FMI/4_year/ai/exercises/12/PerceptronIrisClassification/main.cpp
+1546941222 source:/home/dobri/Documents/FMI/4_year/ai/exercises/12/PerceptronIrisClassification/main.cpp
 	<iostream>
 	<fstream>
 	<string.h>
 	"Plant.h"
+	"PlantFileReader.h"
 	"Perceptron.h"
 	"PlantClassPredictor.h"
 
-1546695292 source:/home/dobri/Documents/FMI/4_year/ai/exercises/12/PerceptronIrisClassification/src/Perceptron.cpp
+1546941262 source:/home/dobri/Documents/FMI/4_year/ai/exercises/12/PerceptronIrisClassification/src/Perceptron.cpp
 	"Perceptron.h"
 
-1546695069 /home/dobri/Documents/FMI/4_year/ai/exercises/12/PerceptronIrisClassification/include/Perceptron.h
+1546941293 /home/dobri/Documents/FMI/4_year/ai/exercises/12/PerceptronIrisClassification/include/Perceptron.h
 	<vector>
-	<assert.h>
 	<time.h>
 	<stdlib.h>
 	<math.h>
@@ -23,15 +23,16 @@
 	<iostream>
 	<vector>
 
-1546694791 source:/home/dobri/Documents/FMI/4_year/ai/exercises/12/PerceptronIrisClassification/src/PlantClassPredictor.cpp
+1546940569 source:/home/dobri/Documents/FMI/4_year/ai/exercises/12/PerceptronIrisClassification/src/PlantClassPredictor.cpp
 	"PlantClassPredictor.h"
 
-1546694667 /home/dobri/Documents/FMI/4_year/ai/exercises/12/PerceptronIrisClassification/include/PlantClassPredictor.h
+1546940526 /home/dobri/Documents/FMI/4_year/ai/exercises/12/PerceptronIrisClassification/include/PlantClassPredictor.h
 	<vector>
 	<time.h>
 	<stdlib.h>
 	"Perceptron.h"
 	"Plant.h"
+	"Folds.h"
 
 1546939055 source:/home/dobri/Documents/FMI/4_year/ai/exercises/12/PerceptronIrisClassification/src/PlantFileReader.cpp
 	"PlantFileReader.h"
@@ -40,5 +41,14 @@
 	<string>
 	<fstream>
 	<vector>
+	"Plant.h"
+
+1546940462 source:/home/dobri/Documents/FMI/4_year/ai/exercises/12/PerceptronIrisClassification/src/Folds.cpp
+	"Folds.h"
+
+1546940446 /home/dobri/Documents/FMI/4_year/ai/exercises/12/PerceptronIrisClassification/include/Folds.h
+	<vector>
+	<time.h>
+	<stdlib.h>
 	"Plant.h"
 

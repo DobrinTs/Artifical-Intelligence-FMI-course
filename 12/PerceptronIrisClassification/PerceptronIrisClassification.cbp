@@ -37,9 +37,11 @@
 		<Unit filename="include/Perceptron.h" />
 		<Unit filename="include/Plant.h" />
 		<Unit filename="include/PlantClassPredictor.h" />
+		<Unit filename="include/PlantFileReader.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Perceptron.cpp" />
 		<Unit filename="src/PlantClassPredictor.cpp" />
+		<Unit filename="src/PlantFileReader.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

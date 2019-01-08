@@ -2,7 +2,6 @@
 #define PERCEPTRON_H
 
 #include <vector>
-#include <assert.h>
 #include <time.h>
 #include <stdlib.h>
 #include <math.h>
@@ -26,12 +25,14 @@ private:
     double learnRate = 0.1;
     std::vector<double> weights;
 
-    int maxLearnIterations = 150;
+    int MAX_LEARN_ITERATIONS = 150;
+    int NUMBER_OF_INPUTS = 4;
+    double ACCEPTABLE_ERROR = 0.075;
 
     double sigmoid(double x);
-    double sigmoidD(double x);
+    double sigmoidDerivative(double x);
     double getInputWeightProduct(const std::vector<double>& inputs);
-    double trySampleAndGetError(const std::vector<double> &inputs, double expectedResult);
+    double learnSampleAndGetError(const std::vector<double> &inputs, double expectedResult);
 };
 
 #endif // PERCEPTRON_H
